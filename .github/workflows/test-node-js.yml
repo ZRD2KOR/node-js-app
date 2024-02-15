@@ -18,6 +18,6 @@ jobs:
             - name: Dump services Context
               run: echo '${{ toJson(job.services) }}'
             - name: Post a user
-              run: 'curl -X POST http://app:3000/api/users -H ''Content-Type: application/json'' -d ''{"username": "SreenathReddy","address": "ExampleAddress"}'''
+              run: 'curl -X POST http://localhost:3001/api/users -H ''Content-Type: application/json'' -d ''{"username": "SreenathReddy","address": "ExampleAddress"}'''
             - name: Get Users
               run: curl http://app:3000/api/users
