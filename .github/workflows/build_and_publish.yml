@@ -25,7 +25,9 @@ jobs:
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-
+      - name: Debug Metadata Tags
+        run: |
+          echo "Metadata Tags: ${{ steps.metadata.outputs.tags }}"
       - name: Build & Publish Docker Image
         uses: docker/build-push-action@v5
         with:
@@ -34,9 +36,5 @@ jobs:
           push: true
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
-
-      - name: Debug Metadata Tags
-        run: |
-          echo "Metadata Tags: ${{ steps.metadata.outputs.tags }}"
         
         
