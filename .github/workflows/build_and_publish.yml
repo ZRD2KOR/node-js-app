@@ -36,6 +36,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
 
       - name: Debug Metadata Tags
-        run: echo "Metadata Tags: ${{ steps.metadata.outputs.tags }}"
+        run: |
+          echo "Metadata Tags: ${{ steps.metadata.outputs.tags }}"
         
         
